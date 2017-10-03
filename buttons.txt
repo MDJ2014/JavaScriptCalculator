@@ -1,0 +1,221 @@
+
+var display = document.getElementById("disBot");
+var displayVals = display.innerHTML;
+ var clicks =0;
+
+$(".btn").on('click', function(e){
+
+   var clickedButton = e.target.id;
+   var value=$(this).text();
+
+
+   switch(clickedButton){
+
+        case "equals" :
+          clicks++;
+           console.log(display.innerHTML.length);
+            break;
+
+        case "clearAll":
+             if(clicks===0){
+                display.innerHTML="";
+            }
+             display.innerHTML ="0";
+             clicks=0;
+
+             break;
+
+        case "clearLast":
+              clicks++;
+               var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+                      display.innerHTML = stringMinusOne ;
+
+                      if( display.innerHTML.length ===0){
+                          display.innerHTML="0";
+                          clicks=0;
+                      }
+
+                 break;
+
+             case "sign":
+
+              var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+               var stringMinus = display.innerHTML.charAt(display.innerHTML.length-1);
+
+             if(clicks===0 || stringMinus ==="0"){
+                display.innerHTML="";
+                 display.innerHTML ="-";
+
+            }else
+             if(display.innerHTML.charAt(display.innerHTML.length-1)==="+"){
+                 display.innerHTML = stringMinusOne+"-" ;
+
+             }else if(display.innerHTML.charAt(display.innerHTML.length-1)==="-"){
+                   display.innerHTML = stringMinusOne+"+" ;
+
+             }else if(
+
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="/"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="X"
+
+                    ){
+                 //display.innerHTML = stringMinusOne+"-" ;
+                  display.innerHTML = display.innerHTML+"";
+             }
+               clicks++;
+             break;
+
+        case "percent":
+             clicks++;
+
+
+            break;
+
+        case "plus":
+
+              var stringMinus = display.innerHTML.charAt(display.innerHTML.length-1);
+               var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+
+               if(clicks===0 || stringMinus ==="0"){
+                display.innerHTML="";
+                 display.innerHTML ="0";
+                 clicks=0;
+            }else
+
+             if(display.innerHTML.charAt(display.innerHTML.length-1)==="+" ||
+                   display.innerHTML.charAt(display.innerHTML.length-1)==="-"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="/"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="X"
+
+                 ){
+                 display.innerHTML = stringMinusOne+"+" ;
+                  clicks++;
+            }else{
+                display.innerHTML = display.innerHTML+"+" ;
+                 clicks++;
+            }
+
+
+         break;
+     case "minus":
+          var stringMinus = display.innerHTML.charAt(display.innerHTML.length-1);
+           var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+
+               if(clicks===0 || stringMinus ==="0"){
+                display.innerHTML="";
+                 display.innerHTML ="0";
+                 clicks=0;
+            }else
+
+             if(display.innerHTML.charAt(display.innerHTML.length-1)==="-" ||
+                  display.innerHTML.charAt(display.innerHTML.length-1)==="+"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="/"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="X"
+            ){
+                 display.innerHTML = stringMinusOne+"-" ;
+                  clicks++;
+            }else{
+                display.innerHTML = display.innerHTML+"-" ;
+                 clicks++;
+            }
+         break;
+
+     case "divide":
+          var stringMinus = display.innerHTML.charAt(display.innerHTML.length-1);
+           var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+
+               if(clicks===0 || stringMinus ==="0"){
+                display.innerHTML="";
+                 display.innerHTML ="0";
+                 clicks=0;
+            }else
+
+             if(display.innerHTML.charAt(display.innerHTML.length-1)==="/" ||
+                   display.innerHTML.charAt(display.innerHTML.length-1)==="-"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="+"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="X"
+        ){
+                 display.innerHTML = stringMinusOne+"/" ;
+                  clicks++;
+            }else{
+                display.innerHTML = display.innerHTML+"/" ;
+                 clicks++;
+            }
+         break;
+
+         case"multiply":
+              var stringMinus = display.innerHTML.charAt(display.innerHTML.length-1);
+               var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+
+               if(clicks===0 || stringMinus ==="0"){
+                display.innerHTML="";
+                 display.innerHTML ="0";
+                 clicks=0;
+            }else
+
+             if(display.innerHTML.charAt(display.innerHTML.length-1)==="X" ||
+                   display.innerHTML.charAt(display.innerHTML.length-1)==="-"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="/"||
+                 display.innerHTML.charAt(display.innerHTML.length-1)==="+"
+    ){
+                 display.innerHTML = stringMinusOne+"X" ;
+                  clicks++;
+            }else{
+                display.innerHTML = display.innerHTML+"X" ;
+                 clicks++;
+             // operatorDisplay("multiply");
+           }
+         break;
+
+        default:
+            if(clicks===0){
+                display.innerHTML="";
+            }
+
+           display.innerHTML+=value;
+           clicks++;
+         //operatorDisplay(multiply); ???
+            break;
+
+
+   }
+
+});
+
+
+
+
+
+
+function operatorDisplay(value){
+
+    //var display = document.getElementById("disBot");
+//     var stringMinus = display.innerHTML.charAt(display.innerHTML.length-1);
+//     var stringMinusOne = display.innerHTML.substr(0,display.innerHTML.length-1);
+//
+//               if(clicks===0 || stringMinus ==="0"){
+//                display.innerHTML="";
+//                 display.innerHTML ="0";
+//                 clicks=0;
+//            }else
+//
+//             if(display.innerHTML.charAt(display.innerHTML.length-1)==="X"){
+//                 display.innerHTML = stringMinusOne+"X" ;
+//                  clicks++;
+//            }else{
+//                display.innerHTML = display.innerHTML+"X" ;
+//                 clicks++;
+//
+//           }
+
+
+}
+
+
+
+function storeValue(value){
+
+    var vals=[];
+    vals.push(value);
+    console.log(vals);
+}

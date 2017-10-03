@@ -1,0 +1,213 @@
+/*@font-face {
+    font-family:'StardosStencil';
+    src: url('../fonts/StardosStencil-Regular.ttf') format('truetype');
+  
+     src: local('?'),
+         url('../fonts/StardosStencil') format('ttf'), url('../fonts/StardosStencil.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+   }*/
+
+@-webkit-keyframes fontfix {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
+body{
+   background-image: url("../resources/tabletop.jpg"); 
+   background-repeat: repeat;
+   -webkit-animation-duration: 0.1s;
+  -webkit-animation-name: fontfix;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0.1s;
+  }
+
+  
+#outerContainer{
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  left: 0;
+  width: 100%;
+}
+
+#calcBody{
+    background-image: url("../resources/calctexture.jpg");
+    
+    
+    height: 400px;
+    width:300px;
+    max-width: 400px;
+    max-height: 600px;
+    min-width: 100px;
+    min-height: 200px;
+   position:relative;
+   display: block;
+    border-radius: 16px;
+    border:inset;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-width: 4px;
+    border-bottom-width: 2px;
+  
+    border-color: #252529;
+     box-shadow: 5px 5px 10px #252529, inset 0 1px rgba(255,255,255,0.2),
+         inset 0 -15px 30px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.5);
+    
+}
+
+#displayBottom{
+    background-color:#949597;
+     border-radius: 4px;
+    border-width: 3px;
+     border-style:  groove;
+    border-color: #252529;
+     height: 12%;
+    width: 98%;
+    margin-top:40px;
+   
+      
+}
+#displayTop{
+    height: 12%;
+    width: 98%;
+    margin-top:40px;
+   position:relative;
+    top: -87px;
+   box-shadow: inset 0 1px rgba(255,255,255,0.2),
+         inset 0 -15px 30px rgba(0,0,0,0.4), 0 1px 15px rgba(0,0,0,0.5);
+}
+
+
+#displayInset{
+    height: 12%;
+    width: 98%;
+    margin-top:40px;
+   position:relative;
+    top: -87px;
+    z-index: 2;
+      background-color:#949597;
+     border-radius: 4px;
+    border-width: 3px;
+    
+}
+
+#disTop{
+    height: 12%;
+    width: 98%;
+ 
+     position:relative;
+   top: -138px;
+    box-shadow: inset 0 1px rgba(255,255,255,0.2),
+     inset 0 -15px 30px rgba(0,0,0,0.4), 0 1px 15px rgba(0,0,0,0.5);
+}
+
+#disBot{
+     height: 12%;
+    width: 98%;
+    margin-top:40px;
+    position:relative;
+    top: -87px;
+     border-radius: 4px;
+    border-width: 2px;
+     border-style:  groove;
+     /*
+    border-color: #252529;*/
+     border-color: black;
+   background-color: #829580;
+    font-size: 2.0em;
+     text-align: right;
+   white-space:nowrap;
+   overflow: hidden; 
+   
+    color:black;
+    font-weight: bold;
+   
+  /*  font-family: 'Stardos Stencil', cursive;*/
+   font-family:'Aldrich', sans-serif;
+    
+    padding-left:5px;
+    padding-right:3px;
+    
+       
+}
+
+#disWrap{
+    background-color:#454546;
+    border-radius: 3px;
+    height: 12%;
+    width: 98%;
+
+    margin-top:40px;
+
+
+    border: 3px solid #454546;
+   box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.7), 
+             0px 1px 5px 0px rgba(0, 0, 0, 0.6); 
+}
+
+#buttonContainer{
+    
+    padding: 0px;
+    position:fixed;
+background-color: black;
+    height: 32%;
+    width: 10%;
+
+   
+    #input{
+        padding: 0px;
+        margin: 0px;
+    }
+ 
+   
+    
+}
+#b{
+  
+    height:auto;
+    width: 90%;
+    padding:0px;
+    position:absolute;
+    align-content: center;
+    margin-top: -120px; 
+    
+}
+.btn{
+    display:inline-block;
+    height: 50px;
+    width:50px; 
+    margin: 3px 6px 3px 6px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial;
+    font-size: 1.9em;
+    text-shadow: -1px 1px 2px #000000;
+    
+     box-shadow: inset 0 1px rgba(255,255,255,0.2),
+     inset 0 -15px 30px rgba(0,0,0,0.4), 0 2px 10px rgba(0,0,0,0.6),0px 1px 5px 0px rgba(0, 0, 0, 0.6),
+     0px 1px 5px 0px rgba(0, 0, 0, 0.6);
+    
+ }
+ .btn:hover{
+     text-decoration: none;
+     color:white;
+ }
+ .btn:focus{
+     color:white;
+ }
+ 
+ #equals{
+     background-color:#deb138;
+ }
+ #clearAll{
+     background-color: red;
+ }
+ #clearLast{
+       background-color: red;
+       padding-right:6px;
+       padding-left:  6px;
+ }
